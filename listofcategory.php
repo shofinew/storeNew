@@ -12,11 +12,29 @@ $con = mysqli_connect("localhost","root","","store");
       <?php
       $sql = "SELECT * FROM category";
       $exsql = mysqli_query($con, $sql);
+
+      
       if($exsql){
-           while($row = mysqli_fetch_assoc($exsql)){
-            echo $row['CategoryNAME'].' '.$row['CategoryDATE'].'<br><br>';
-           } 
-      }
+            echo "<table border='1'>
+            <tr>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Action</th>
+            <tr>";
+            while($row = mysqli_fetch_assoc($exsql)){
+            $categoryid = $row['CategoryID'];
+            $categoryname = $row['CategoryNAME'];
+            $categorydate = $row['CategoryDATE'];
+            
+            echo "<tr>
+            <td>$categoryname</td>
+            <td>$categorydate</td>
+            <td><a href='editcategory.php?id=$categoryid'>Edit</td>
+            </tr>";
+      } 
+
+}
+echo "</table>";
       ?>
 </body>
 </html>
