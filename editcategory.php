@@ -22,10 +22,19 @@ $con = mysqli_connect("localhost","root","","store");
            $CategoryDATE = $data['CategoryDATE'];
 
       }
+      if(isset($_GET['name'])){
+            $name = $_GET['name'];
+            $date = $_GET['date'];
+            $id = $_GET['id'];
 
-      $name = $_GET['name'];
-      $date = $_GET['date'];
-      $id = $_GET['id'];
+            $sql1="UPDATE category SET CategoryNAME='$name', CategoryDATE='$date' WHERE CategoryID='$id'";
+
+            $exsqle1 = mysqli_query($con, $sql1);
+            if(!$exsqle1){
+                  echo mysqli_error($con);
+            }
+
+      }
      
       ?>
       <form action = "editcategory.php" method="GET">
