@@ -44,6 +44,6 @@ $con = mysqli_connect("localhost","root","","store");
             <input type="submit" value="submit">
       </form>
 
-      
+      <!-- this is extra brance -->
 </body>
 </html>
