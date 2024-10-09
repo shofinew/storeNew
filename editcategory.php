@@ -49,3 +49,5 @@ $con = mysqli_connect("localhost","root","","store");
       ?>
 </body>
 </html>
+
+be careful about your code...
