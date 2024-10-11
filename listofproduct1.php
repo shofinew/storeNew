@@ -36,8 +36,8 @@ $con = mysqli_connect("localhost","root","","store");
             </tr>";
       } 
 
+      echo "</table>";
 }
-echo "</table>";
       ?>
 </body>
 </html>

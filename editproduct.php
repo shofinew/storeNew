@@ -7,7 +7,7 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>addproduct</title>
+      <title>edtiproduct</title>
 </head>
 <body>
       <?php
@@ -37,7 +37,7 @@
       </form>
 
       <?php
-      if(isset($_GET['pname'])){
+      $_SERVER['REQUEST_METHOD']==="GET";
       $pname = $_GET['pname'];
       $pcate = $_GET['pcate'];
       $pcode = $_GET['pcode'];
@@ -52,7 +52,6 @@
             echo "data inserted";
       }else{
             echo mysqli_error($con);
-      }
       }
       ?>
 </body>
